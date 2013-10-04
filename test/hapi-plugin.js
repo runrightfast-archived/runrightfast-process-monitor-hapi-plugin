@@ -20,15 +20,20 @@ var Hapi = require('hapi');
 
 describe('LoggingService Proxy Hapi Plugin', function() {
 
-	it('can be added as a plugin to hapi with default options', function(done) {
+	it('can be added as a plugin to hapi - logDir option is required', function(done) {
 
-		var options = {};
+		try {
+			var options = {};
 
-		var server = new Hapi.Server();
-		server.pack.require('../', options, function(err) {
-			expect(err).to.not.exist;
+			var server = new Hapi.Server();
+			server.pack.require('../', options, function(err) {
+				expect(err).to.not.exist;
+				done();
+			});
+			done(new Error('expected Error because logDir option was not specified'));
+		} catch (err) {
 			done();
-		});
+		}
 	});
 
 	it('can be added as a plugin to hapi with logDir option', function(done) {
