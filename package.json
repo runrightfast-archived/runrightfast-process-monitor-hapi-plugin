@@ -11,7 +11,8 @@
 		"blanket":{
 			"pattern":[
 				"lib/hapi-plugin.js",
-				"lib/pkgInfo.js"
+				"lib/pkgInfo.js",
+				"lib/parentPkgInfo.js"
 			]	
 		}
 	},
@@ -23,7 +24,9 @@
 		"log4js":"0.6.x",
 		"extend":"1.2.x",
 		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.10",
-		"pkginfo":"0.3.x"
+		"pkginfo":"0.3.x",
+		"good":"0.12.x",
+		"file":"0.2.x"
 	},
 	"devDependencies":{
 		"grunt":"~0.4.1",

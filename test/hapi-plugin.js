@@ -20,10 +20,21 @@ var Hapi = require('hapi');
 
 describe('LoggingService Proxy Hapi Plugin', function() {
 
-	it('can be added as a plugin to hapi', function(done) {
+	it('can be added as a plugin to hapi with default options', function(done) {
+
+		var options = {};
+
+		var server = new Hapi.Server();
+		server.pack.require('../', options, function(err) {
+			expect(err).to.not.exist;
+			done();
+		});
+	});
+
+	it('can be added as a plugin to hapi with logDir option', function(done) {
 
 		var options = {
-		/* TODO: add plugin options here */
+			logDir : 'logs'
 		};
 
 		var server = new Hapi.Server();
