@@ -18,7 +18,7 @@
 var expect = require('chai').expect;
 var Hapi = require('hapi');
 
-describe('LoggingService Proxy Hapi Plugin', function() {
+describe('Process Mpnitor Hapi Plugin', function() {
 
 	it('can be added as a plugin to hapi - logDir option is required', function(done) {
 
